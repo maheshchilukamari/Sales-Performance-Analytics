@@ -1,0 +1,65 @@
+-- Table name expected in Power BI: sales_cleaned
+-- Load data/sales_cleaned.csv and rename the table to sales_cleaned before creating these measures.
+
+Total Sales =
+SUM(sales_cleaned[sales])
+
+Total Profit =
+SUM(sales_cleaned[profit])
+
+Total Orders =
+DISTINCTCOUNT(sales_cleaned[order_id])
+
+Average Order Value =
+DIVIDE([Total Sales], [Total Orders])
+
+Profit Margin =
+DIVIDE([Total Profit], [Total Sales])
+
+Total Quantity =
+SUM(sales_cleaned[quantity])
+
+Average Discount =
+AVERAGE(sales_cleaned[discount])
+
+Sales Previous Year =
+CALCULATE(
+    [Total Sales],
+    FILTER(
+        ALL(sales_cleaned[year]),
+        sales_cleaned[year] = MAX(sales_cleaned[year]) - 1
+    )
+)
+
+Sales YoY Growth =
+DIVIDE(
+    [Total Sales] - [Sales Previous Year],
+    [Sales Previous Year]
+)
+
+Profit Previous Year =
+CALCULATE(
+    [Total Profit],
+    FILTER(
+        ALL(sales_cleaned[year]),
+        sales_cleaned[year] = MAX(sales_cleaned[year]) - 1
+    )
+)
+
+Profit YoY Growth =
+DIVIDE(
+    [Total Profit] - [Profit Previous Year],
+    [Profit Previous Year]
+)
+
+High Discount Orders =
+CALCULATE(
+    [Total Orders],
+    sales_cleaned[discount] >= 0.20
+)
+
+High Discount Profit =
+CALCULATE(
+    [Total Profit],
+    sales_cleaned[discount] >= 0.20
+)
