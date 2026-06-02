@@ -289,27 +289,6 @@ powerbi/Sales_Performance_Analytics_Dashboard.pbix
 
 10. Export screenshots into the `screenshots/` folder.
 
-## Video Walkthrough Guide
-
-A polished 5-10 minute walkthrough script is included here:
-
-```text
-video_walkthrough_script.md
-```
-
-The script explains:
-
-- Project overview
-- Business problem
-- Folder structure
-- Dataset
-- Python ETL process
-- SQLite and SQL analysis
-- Power BI dashboard plan
-- Key insights
-- Business recommendations
-- Conclusion
-
 ## Future Improvements
 
 - Build and attach the final Power BI `.pbix` file.
