@@ -300,6 +300,7 @@ powerbi/Sales_Performance_Analytics_Dashboard.pbix
 - Publish the dashboard to Power BI Service.
 
 ##Conclusion
+
 The Sales Performance Analytics Dashboard project demonstrates a complete Data Analyst workflow from raw data preparation to business insight generation. Using Python, Pandas, SQLite, SQL, and Power BI planning, this project shows how sales data can be cleaned, transformed, analyzed, and presented in a way that supports better decision-making.
 
 The analysis highlights key performance areas such as total sales, profit, regional performance, product category profitability, customer segment behavior, monthly sales trends, and discount impact. The findings show how data can help identify high-performing regions and products while also revealing risks such as heavy discounting reducing profitability.
